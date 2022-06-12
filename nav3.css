@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+
+*{
+    background: #222930;
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+
+}
+
+#body{
+    background: #222930;
+    color: #E9E9E9;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    line-height: 1.6;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    /* scroll-snap-type: y mandatory;  */
+    overflow-y:scroll;
+    scroll-behavior:smooth;
+    
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    border-width: 0 0 4px 0;
+    border-style: solid;
+    border-color: #4EB1BA;
+    margin-bottom: 10px;
+}
+.logo-name{
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    
+}
+.img{
+    
+    width: 60px;
+    clip-path: circle();
+    margin: 5px 0 0 10px;
+}
+.name{
+    margin-top: 8px;
+    padding-top: 10px;
+    font-size: 20px;
+    font-family: 'Merienda One', cursive;
+    letter-spacing: 1px;
+}
+.name a{
+    /* color:#4EB1BA; */
+    color: #E9E9E9; 
+    /* color: #BA574E; */
+}
+.name a span{
+    /* color: #E9E9E9; */
+    /* color:#4EB1BA; */
+    color: #BA574E;
+}
+.navbar{
+    height: 66px;
+    width: 100%;
+    display: grid;
+    grid-template-columns:1.5fr 2fr;
+    
+}
+.links{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    place-items: center;
+    text-transform: uppercase;
+    letter-spacing:2px;
+    
+}
+.links li a{
+    transition: all 0.3s ease 0s;
+    background: #222930;
+    color: #E9E9E9;
+}
+.links li a:hover{
+    color: #0088a9;
+}
+
+
+button{
+    text-transform: uppercase;
+    padding: 8px 18px;
+    background-color: rgba(0, 136, 169, 1);
+    
+    color: #E9E9E9;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+button:hover{
+    background-color: rgba(0, 136, 169, 0.7);
+}
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-align: center;
+    scroll-behavior: smooth;
+}
+section h1{
+    font-size: 3.5rem;
+    margin: 15px 0 15px 0;
+    line-height: 1.6;
+}
+section h2{
+    font-size: 3rem;
+    margin: 5px 0 5px 0;
+
+}
+
+section p{
+    font-size:1.5rem;
+    margin: 10px 0 10px 0;
+}
+#about-skip{
+    font-size: 3.5rem;
+    text-decoration: none;
+    color: #0088a9;
+    margin: 2px 0 2px 0;
+}
+
+#about-skip:hover {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+@keyframes shake {
+    10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+    transform: translate3d(2px, 0, 0);
+    }
+    
+    30%, 50%, 70% {
+    transform: translate3d(-2px, 0, 0);
+    }
+    40%, 60% {
+    transform: translate3d(2px, 0, 0);
+    }
+}
+
+#toggler, .logo-name label{
+    
+    display: none;
+}
+
+@media screen and 
+(max-width: 600px){
+    .links{
+        width: 100%;
+        max-height: 0; /*Makes the max-height 0 to side the expanded menu.*/
+        overflow: hidden; /*Hides the overflowing content.*/
+    }
+    
+    /* .logo-name label{
+        display: inline-flex; /*Makes it an inline flex container for the icon. Used for centering the icon inside this box.*/
+        /* align-items: center;
+        cursor: pointer;
+    } */ 
+    .navbar{
+        height: 40px;
+        
+    }
+
+    header{
+        border-width:0 0 2px 0;
+    }
+    .name{
+        font-size: 13px;
+        width: 150px;
+    }
+}
